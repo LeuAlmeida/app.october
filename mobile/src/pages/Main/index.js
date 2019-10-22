@@ -1,59 +1,77 @@
 import React from 'react';
 
 import {
-  Text, Image, StyleSheet, Dimensions, ImageBackground, StatusBar,
+  SafeAreaView, ScrollView, View, Image, Text, ImageBackground, StyleSheet,
 } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#f9fafc',
+  },
+  bgImage: {
     alignItems: 'center',
-    flex: 1,
+    height: 175,
     paddingHorizontal: 20,
   },
-  fileName: {
+  perfilImg: {
+    width: 50,
+    height: 50,
+    borderRadius: 30,
+    resizeMode: 'cover',
+    marginRight: 10,
+  },
+  perfilView: {
+    flex: 1,
+    flexDirection: 'row',
+    marginTop: 15
+  },
+  fullName: {
     fontWeight: 'bold',
-    marginTop: 5,
+    flexDirection: 'column',
   },
-  instructions: {
-    color: '#DDD',
-    fontSize: 14,
-    marginTop: 20,
-    textAlign: 'center',
-  },
-  logo: {
-    height: Dimensions.get('window').height * 0.11,
-    marginVertical: Dimensions.get('window').height * 0.11,
-    width: Dimensions.get('window').height * 0.11 * (1950 / 662),
-  },
-  welcome: {
-    color: '#fff',
-    fontSize: 22,
+  userName: {
     fontWeight: 'bold',
-    textAlign: 'center',
+    flexWrap: 'wrap',
+    flexDirection: 'column',
   },
+  balanceCard: {
+    backgroundColor: '#fff',
+    height: 175,
+    width: '80%',
+    alignSelf: 'center',
+    marginTop: -70
+  },
+  balanceTitle: {
+
+  },
+
 });
 
+import Perfil from '../../assets/img/perfil.jpg';
+
 const Main = () => (
-  <ImageBackground
+
+
+
+  <SafeAreaView style={styles.container}>
+    <ImageBackground
     source={{
       uri: 'https://s3-sa-east-1.amazonaws.com/rocketseat-cdn/background.png',
     }}
-    style={styles.container}
+    style={styles.bgImage}
     resizeMode="cover"
   >
-    <StatusBar barStyle="light-content" backgroundColor="#7159c1" />
-    <Image
-      source={{
-        uri: 'https://s3-sa-east-1.amazonaws.com/rocketseat-cdn/rocketseat_logo.png',
-      }}
-      style={styles.logo}
-      resizeMode="contain"
-    />
-    <Text style={styles.welcome}>Bem-vindo ao Template Básico!</Text>
-    <Text style={styles.instructions}>Essa é a tela principal da sua aplicação =)</Text>
-    <Text style={styles.instructions}>Você pode editar a tela no arquivo:</Text>
-    <Text style={[styles.instructions, styles.fileName]}>src/pages/Main/index.js</Text>
+    <View style={styles.perfilView}>
+      <Image style={styles.perfilImg} source={Perfil} />
+      <Text style={styles.fullName}>Léu Almeida</Text>
+    </View>
   </ImageBackground>
+    <View style={styles.balanceCard}>
+      <Text style={styles.balanceTitle}></Text>
+    </View>
+
+  </SafeAreaView>
+
 );
 
 export default Main;
