@@ -15,9 +15,11 @@
     "react": "16.9.0",
     "react-native": "0.61.2",
     "react-native-gesture-handler": "^1.4.1",
+    "react-native-iphone-x-helper": "^1.2.1",
     "react-navigation": "^4.0.10",
     "reactotron-react-native": "^4.0.2",
-    "styled-components": "^4.4.0"
+    "styled-components": "^4.4.0",
+    "yarn.lock": "^0.0.1-security"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
