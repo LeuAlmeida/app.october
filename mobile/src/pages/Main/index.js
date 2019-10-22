@@ -11,11 +11,13 @@ import {
   TitleText,
   CardBody,
   BalanceValue,
+
 } from './style';
+import UniqueService from '../../components/Dashboard/UniqueService';
+import QuickLine from '../../components/Dashboard/QuickLine';
 
 import api from '../../services/api';
 
-import UniqueService from '../../components/Dashboard/UniqueService';
 
 import perfilPic from '../../assets/img/perfil.jpg';
 
@@ -26,13 +28,13 @@ export default class Main extends React.Component {
   }
 
   componentDidMount() {
-    return fetch('http://www.mocky.io/v2/5c923b0932000029056bce39')
+    return fetch('https://facebook.github.io/react-native/movies.json')
       .then(response => response.json())
       .then(responseJson => {
         this.setState(
           {
             isLoading: false,
-            dataSource: responseJson.installments,
+            dataSource: responseJson.movies,
           },
           function() {},
         );
@@ -72,19 +74,21 @@ export default class Main extends React.Component {
           <CardBody>
             <UniqueService />
 
-
-
-            {/* <FlatList
-              data={this.state.dataSource}
-              renderItem={({item}) => (
-                <Text>
-                  {item.UserId}, {item.amountTaken}
-                </Text>
-              )}
-              keyExtractor={({id}, index) => id}
-            /> */}
           </CardBody>
         </BalanceCard>
+        <QuickLine />
+
+        {/* <View style={{width: '90%'}}>
+            <FlatList
+              style={{paddingTop: 10}}
+              data={this.state.dataSource}
+              renderItem={({item}) => <Text style={{textAlign: 'center'}}>{item.title}, {item.releaseYear}</Text>}
+              keyExtractor={({id}, index) => id}
+            />
+        </View> */}
+
+
+
       </Container>
     );
   }
