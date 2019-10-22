@@ -56,7 +56,7 @@ export default class Dashboard extends Component {
             <Icon
               name="schedule"
               size={20}
-              color="#b071e4"
+              color="#2bb2eb"
               style={styles.quickAccessIcon}
             />
             <Text style={styles.quickTitle}>Agendamentos</Text>
@@ -66,7 +66,7 @@ export default class Dashboard extends Component {
             <Icon
               name="attach-money"
               size={20}
-              color="#f55a90"
+              color="#44be7c"
               style={styles.quickAccessIcon}
             />
             <Text style={styles.quickTitle}>Juros contratados</Text>
