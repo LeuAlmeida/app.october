@@ -25,7 +25,7 @@ export default function UniqueService() {
       <View style={styles.uniqueService}>
         <Image style={styles.serviceIcon} source={articles} />
         <Text style={styles.serviceText}>
-          Meu Contrato
+          Meu contrato
         </Text>
       </View>
 
