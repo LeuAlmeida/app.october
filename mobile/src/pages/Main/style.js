@@ -16,7 +16,7 @@ export const Background = styled.ImageBackground`
 export const Perfil = styled.View`
   flex-direction: row;
   margin-top: 15;
-  padding-left: 10%;
+  padding-left: 5%;
 `;
 
 export const PerfilImg = styled.Image`
@@ -38,7 +38,7 @@ export const FullName = styled.Text`
 export const BalanceCard = styled.View`
   background: #fff;
   height: 175px;
-  width: 80%;
+  width: 90%;
   align-self: center;
   margin-top: -85px;
   border-radius: 8px;
@@ -54,7 +54,7 @@ export const CardTitle = styled.View`
 `;
 
 export const TitleText = styled.Text`
-  padding: 10px 0px 0px 10px;
+  padding: 10px 0px 0px 15px;
   font-size: 14px;
   color: #757575;
   margin-top: 5px;
@@ -64,7 +64,7 @@ export const BalanceValue = styled.Text`
   padding: 10px 0px 0px 10px;
   font-weight: bold;
   font-size: 16px;
-  margin-left: 30px;
+  margin-left: 20%;
   margin-top: 4px;
   color: #353535;
 `;
@@ -73,18 +73,4 @@ export const CardBody = styled.View`
   padding-top: 10px;
   flex-direction: row;
   justify-content: center;
-`;
-
-export const UniqueService = styled.View`
-  flex-direction: column;
-`
-
-export const ServiceIcon = styled.Image`
-  width: 45px;
-  height: 45px;
-`;
-
-export const ServiceText = styled.Text`
-  text-align: center;
-  width: 45px;
 `;
