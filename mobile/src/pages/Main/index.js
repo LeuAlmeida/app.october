@@ -1,6 +1,5 @@
 import React from 'react';
 import {StyleSheet, Text} from 'react-native';
-
 import {
   Container,
   Background,
@@ -12,16 +11,16 @@ import {
   TitleText,
   CardBody,
   BalanceValue,
-  UniqueService,
+
   ServiceIcons,
   ServiceIcon,
   ServiceTexts,
   ServiceText,
 } from './style';
 
-import perfilPic from '../../assets/img/perfil.jpg';
+import UniqueService from '../../components/Dashboard/UniqueService';
 
-import allPays from '../../assets/img/icons/capital.png';
+import perfilPic from '../../assets/img/perfil.jpg';
 
 const Main = () => (
   <Container>
@@ -41,18 +40,7 @@ const Main = () => (
       </CardTitle>
 
       <CardBody>
-        <UniqueService>
-          <ServiceIcon source={allPays} />
-          <ServiceText>Teste</ServiceText>
-        </UniqueService>
-        <UniqueService>
-          <ServiceIcon source={allPays} />
-          <ServiceText>Teste</ServiceText>
-        </UniqueService>
-        <UniqueService>
-          <ServiceIcon source={allPays} />
-          <ServiceText>Teste</ServiceText>
-        </UniqueService>
+        <UniqueService />
       </CardBody>
     </BalanceCard>
   </Container>
