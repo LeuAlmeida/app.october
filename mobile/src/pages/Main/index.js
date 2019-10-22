@@ -1,5 +1,12 @@
 import React from 'react';
-import {StyleSheet, Text, View, ActivityIndicator, FlatList} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  ActivityIndicator,
+  FlatList,
+
+} from 'react-native';
 import {
   Container,
   Background,
@@ -11,15 +18,20 @@ import {
   TitleText,
   CardBody,
   BalanceValue,
-
+  AllStatements,
+  IndividualStatement,
+  StatementIcon,
+  StatementTitle,
+  StatementPrice
 } from './style';
 import UniqueService from '../../components/Dashboard/UniqueService';
 import QuickLine from '../../components/Dashboard/QuickLine';
 
 import api from '../../services/api';
 
-
 import perfilPic from '../../assets/img/perfil.jpg';
+import actualIcon from '../../assets/img/icons/actual.png';
+import scheduleIcon from '../../assets/img/icons/schedule.png';
 
 export default class Main extends React.Component {
   constructor(props) {
@@ -73,10 +85,37 @@ export default class Main extends React.Component {
 
           <CardBody>
             <UniqueService />
-
           </CardBody>
         </BalanceCard>
+
         <QuickLine />
+
+        <AllStatements>
+        <IndividualStatement>
+            <StatementIcon source={actualIcon} />
+            <View style={{flexDirection: 'column'}}>
+              <StatementTitle>Fatura fechada</StatementTitle>
+              <StatementPrice>R$ 456,00 <Text style={{color: '#73a8f6'}}>/ Venc. 31/10</Text></StatementPrice>
+            </View>
+          </IndividualStatement>
+
+          <IndividualStatement>
+            <StatementIcon source={scheduleIcon} />
+            <View style={{flexDirection: 'column'}}>
+              <StatementTitle>Fatura em aberto</StatementTitle>
+              <StatementPrice>R$ 456,00 <Text style={{color: '#73a8f6'}}>/ Novembro</Text></StatementPrice>
+            </View>
+          </IndividualStatement>
+
+          <IndividualStatement>
+            <StatementIcon source={scheduleIcon} />
+            <View style={{flexDirection: 'column'}}>
+              <StatementTitle>Fatura em aberto</StatementTitle>
+              <StatementPrice>R$ 456,00 <Text style={{color: '#73a8f6'}}>/ Dezembro</Text></StatementPrice>
+            </View>
+          </IndividualStatement>
+
+        </AllStatements>
 
         {/* <View style={{width: '90%'}}>
             <FlatList
@@ -86,9 +125,6 @@ export default class Main extends React.Component {
               keyExtractor={({id}, index) => id}
             />
         </View> */}
-
-
-
       </Container>
     );
   }
