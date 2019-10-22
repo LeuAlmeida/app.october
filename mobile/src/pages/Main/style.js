@@ -57,14 +57,14 @@ export const TitleText = styled.Text`
   padding: 10px 0px 0px 15px;
   font-size: 14px;
   color: #757575;
-  margin-top: 5px;
+  margin-top: 10px;
 `;
 
 export const BalanceValue = styled.Text`
   padding: 10px 0px 0px 10px;
   font-weight: bold;
-  font-size: 16px;
-  margin-left: 20%;
+  font-size: 22px;
+  margin-left: 10%;
   margin-top: 4px;
   color: #353535;
 `;
@@ -73,4 +73,43 @@ export const CardBody = styled.View`
   padding-top: 10px;
   flex-direction: row;
   justify-content: center;
+`;
+
+export const AllStatements = styled.ScrollView.attrs({
+  horizontal: true,
+  contentContainerStyle: { paddingLeft: '5%', paddingRight: 20 },
+  showHorizontalScrollIndicator: false,
+})`
+  margin-top: 10px;
+`;
+
+export const IndividualStatement = styled.View`
+  height: 100px;
+  width: 300px;
+  background-color: #7770eb;
+  border-radius: 6px;
+  flex-direction: row;
+  margin-right: 10px;
+
+`;
+
+export const StatementIcon = styled.Image`
+  width: 60px;
+  height: 60px;
+  margin: 20px 30px 0px 20px;
+`
+
+export const StatementTitle = styled.Text`
+  font-size: 18px;
+  font-weight:bold;
+  flex-direction: column;
+  align-self: flex-start;
+  color: #fff;
+  padding-top: 25px;
+`;
+
+export const StatementPrice = styled.Text`
+  font-size: 14px;
+  align-self: flex-start;
+  color: #fff;
 `;
