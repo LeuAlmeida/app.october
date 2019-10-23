@@ -87,7 +87,8 @@ export const AllStatements = styled.ScrollView.attrs({
   margin-top: 10px;
 `;
 
-export const IndividualStatement = styled.View`
+
+export const IndividualStatement = styled.TouchableOpacity`
   height: 100px;
   width: 300px;
   background-color: #7770eb;
