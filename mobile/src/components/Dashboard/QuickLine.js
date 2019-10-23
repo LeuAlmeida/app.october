@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import {StyleSheet, View, Image, Text} from 'react-native';
+import {StyleSheet, View, Text} from 'react-native';
 
 export default class Dashboard extends Component {
   render() {
