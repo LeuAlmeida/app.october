@@ -73,7 +73,7 @@ export default class Main extends Component {
         <ImageBackground
           source={require('../../assets/img/bg.jpg')}
           style={{width: '100%', height: '100%'}}>
-          <Perfil style={{alignSelf: 'flex-start'}}>
+          <Perfil style={{alignSelf: 'flex-start'}} onPress={() => navigate('Account')}>
             <PerfilImg source={perfilPic} />
             <FullName>Léu Almeida</FullName>
           </Perfil>

@@ -11,7 +11,7 @@ export const Background = styled.ImageBackground`
   height: 175px;
 `;
 
-export const Perfil = styled.View`
+export const Perfil = styled.TouchableOpacity`
   flex-direction: row;
   margin-top: 15;
   padding-left: 5%;
