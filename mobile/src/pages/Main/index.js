@@ -5,6 +5,7 @@ import {
   View,
   ActivityIndicator,
   FlatList,
+  ImageBackground
 } from 'react-native';
 import {
   Container,
