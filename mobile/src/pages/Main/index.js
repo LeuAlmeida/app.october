@@ -1,11 +1,12 @@
 import React from 'react';
+import { withNavigation } from 'react-navigation';
 import {
   StyleSheet,
   Text,
   View,
   ActivityIndicator,
+  ImageBackground,
   FlatList,
-  ImageBackground
 } from 'react-native';
 import {
   Container,
@@ -29,14 +30,11 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import UniqueService from '../../components/Dashboard/UniqueService';
 import QuickLine from '../../components/Dashboard/QuickLine';
 
-import api from '../../services/api';
-
-
 import perfilPic from '../../assets/img/perfil.jpg';
 import actualIcon from '../../assets/img/icons/actual.png';
 import scheduleIcon from '../../assets/img/icons/schedule.png';
 
-export default class Main extends React.Component {
+class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {isLoading: true};
@@ -45,7 +43,6 @@ export default class Main extends React.Component {
   componentDidMount() {
     return (
       fetch('http://www.mocky.io/v2/5c923b0932000029056bce39')
-        // return fetch('https://facebook.github.io/react-native/movies.json')
         .then(response => response.json())
         .then(responseJson => {
           this.setState(
@@ -74,16 +71,11 @@ export default class Main extends React.Component {
 
     return (
       <Container>
-        <Background
-          source={{
-            uri:
-              'https://s3-sa-east-1.amazonaws.com/rocketseat-cdn/background.png',
-          }}>
+          <ImageBackground source={require('../../assets/img/bg.jpg')} style={{width: '100%', height: '100%'}}>
           <Perfil style={{alignSelf: 'flex-start'}}>
             <PerfilImg source={perfilPic} />
             <FullName>Léu Almeida</FullName>
           </Perfil>
-        </Background>
         <BalanceCard style={styles.defaultShadow}>
           <CardTitle>
             <TitleText>Total do empréstimo</TitleText>
@@ -136,10 +128,13 @@ export default class Main extends React.Component {
               keyExtractor={({id}, index) => id}
             />
         </View> */}
+      </ImageBackground>
       </Container>
     );
   }
 }
+
+export default withNavigation(Main);
 
 const styles = StyleSheet.create({
   defaultShadow: {

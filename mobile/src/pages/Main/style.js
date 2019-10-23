@@ -38,7 +38,7 @@ export const BalanceCard = styled.View`
   height: 150px;
   width: 90%;
   align-self: center;
-  margin-top: -95px;
+  margin-top: 20px;
   border-radius: 8px;
   flex-direction: column;
 `;
