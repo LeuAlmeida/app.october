@@ -37,10 +37,10 @@ export const FullName = styled.Text`
 
 export const BalanceCard = styled.View`
   background: #fff;
-  height: 175px;
+  height: 150px;
   width: 90%;
   align-self: center;
-  margin-top: -85px;
+  margin-top: -95px;
   border-radius: 8px;
   flex-direction: column;
 `;
@@ -49,7 +49,7 @@ export const CardTitle = styled.View`
   flex-direction: row;
   border-bottom-width: ${StyleSheet.hairlineWidth}px;
   border-bottom-color: #cacaca;
-  height: 60px;
+  height: 45px;
   width: 100%;
 `;
 
@@ -57,7 +57,7 @@ export const TitleText = styled.Text`
   padding: 10px 0px 0px 15px;
   font-size: 14px;
   color: #757575;
-  margin-top: 10px;
+  margin-top: 5px;
 `;
 
 export const BalanceValue = styled.Text`
@@ -65,7 +65,6 @@ export const BalanceValue = styled.Text`
   font-weight: bold;
   font-size: 22px;
   margin-left: 10%;
-  margin-top: 4px;
   color: #353535;
 `;
 
@@ -73,6 +72,13 @@ export const CardBody = styled.View`
   padding-top: 10px;
   flex-direction: row;
   justify-content: center;
+`;
+
+export const StatementSection = styled.View`
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 0 5%;
+  margin-bottom: 5px;
 `;
 
 export const AllStatements = styled.ScrollView.attrs({
