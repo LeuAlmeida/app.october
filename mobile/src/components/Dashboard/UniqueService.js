@@ -15,12 +15,12 @@ function UniqueService({navigation}) {
   return (
     <>
 
-      <TouchableOpacity style={styles.uniqueService} onPress={()=> navigation.navigate('Payments')}>
+      <View style={styles.uniqueService}>
         <Image style={styles.serviceIcon} source={capital} />
         <Text style={styles.serviceText}>
           Pagamentos
         </Text>
-      </TouchableOpacity>
+      </View>
 
       <View style={styles.uniqueService}>
         <Image style={styles.serviceIcon} source={calendar} />
