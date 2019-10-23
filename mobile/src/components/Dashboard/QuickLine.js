@@ -3,8 +3,6 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import {StyleSheet, View, Image, Text} from 'react-native';
 
-// import { Container } from './styles';
-
 export default class Dashboard extends Component {
   render() {
     return (
