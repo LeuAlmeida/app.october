@@ -1,20 +1,26 @@
 import React from 'react';
-import {StyleSheet, View, Image, Text} from 'react-native';
+import { withNavigation } from 'react-navigation';
+import {StyleSheet, View, Image, Text, TouchableOpacity} from 'react-native';
 
 import capital from '../../assets/img/icons/capital.png';
 import calendar from '../../assets/img/icons/calendar.png';
 import articles from '../../assets/img/icons/articles.png';
 
-export default function UniqueService() {
+function UniqueService({navigation}) {
+
+  function paymentsNavigate() {
+    navigation.navigate('Payments');
+  }
+
   return (
     <>
 
-      <View style={styles.uniqueService}>
+      <TouchableOpacity style={styles.uniqueService} onPress={()=> navigation.navigate('Payments')}>
         <Image style={styles.serviceIcon} source={capital} />
         <Text style={styles.serviceText}>
           Pagamentos
         </Text>
-      </View>
+      </TouchableOpacity>
 
       <View style={styles.uniqueService}>
         <Image style={styles.serviceIcon} source={calendar} />
@@ -52,3 +58,5 @@ const styles = StyleSheet.create({
     color: '#3c3c3c'
   },
 });
+
+export default withNavigation(UniqueService);
