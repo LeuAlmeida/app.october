@@ -71,16 +71,29 @@ export default class Main extends Component {
     return (
       <Container>
         <ImageBackground
-          source={require('../../assets/img/bg.jpg')}
+          source={require('../../assets/img/halfBg.jpg')}
           style={{width: '100%', height: '100%'}}>
-          <Perfil style={{alignSelf: 'flex-start'}} onPress={() => navigate('Account')}>
+          <Perfil
+            style={{alignSelf: 'flex-start'}}
+            onPress={
+              () => navigate(
+                'Account', {
+                  UserId: this.state.allData.UserId,
+                  amountTaken: this.state.allData.amountTaken,
+                  amountPayd: this.state.allData.amountPayd,
+                  monthlyInterest: this.state.allData.monthlyInterest,
+                  totalAmountInTaxes: this.state.allData.totalAmountInTaxes,
+                }
+              )
+            }
+          >
             <PerfilImg source={perfilPic} />
             <FullName>Léu Almeida</FullName>
           </Perfil>
           <BalanceCard style={styles.defaultShadow}>
             <CardTitle>
               <TitleText>Total do empréstimo</TitleText>
-              <BalanceValue>R$ {this.state.allData.amountTaken}</BalanceValue>
+              <BalanceValue>R$ {this.state.allData.amountTaken},00</BalanceValue>
             </CardTitle>
 
             <CardBody>

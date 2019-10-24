@@ -6,14 +6,9 @@ export const Container = styled.View`
   justify-content: center;
 `;
 
-export const Background = styled.ImageBackground`
-  align-items: center;
-  height: 175px;
-`;
-
 export const Perfil = styled.TouchableOpacity`
   flex-direction: row;
-  margin-top: 15;
+  margin-top: 25px;
   padding-left: 5%;
 `;
 
