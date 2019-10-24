@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   StyleSheet,
   Text,
+  Alert
 } from 'react-native';
 import {
   Container,
@@ -20,11 +21,12 @@ import {
   CardDate,
   CardPs,
 } from './style';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import Emoji from 'react-native-emoji';
 import moneyBag from '../../assets/img/money-bag.png';
 
-class Main extends React.Component {
+export default class Statement extends React.Component {
   constructor(props) {
     super(props);
     this.state = {isLoading: true};
@@ -60,11 +62,14 @@ class Main extends React.Component {
     const value = this.props.navigation.getParam('value');
     const dueDate = this.props.navigation.getParam('dueDate');
 
+    function handlePay() {
+      Alert.alert('Desculpe, isso é apenas uma simulação 😅')
+    }
 
     return (
       <>
         <ImageBackground
-          source={require('../../assets/img/bg.jpg')}
+          source={require('../../assets/img/fullBg.jpg')}
           style={{width: '100%', height: '100%'}}>
           <Container>
             <TouchableOpacity onPress={() => this.props.navigation.navigate('Main')}>
@@ -75,7 +80,7 @@ class Main extends React.Component {
                 <CardIcon source={moneyBag} />
               </CardIconCircle>
               <CardDescription>Sua fatura está disponível</CardDescription>
-              <CardTitle>para pagamento! :)</CardTitle>
+              <CardTitle>para pagamento! <Emoji name="heart_eyes" style={{fontSize: 18}} /></CardTitle>
 
               <CardValue>{ value }</CardValue>
 
@@ -83,7 +88,7 @@ class Main extends React.Component {
 
               <CardPs>Pagando agora você ganhará R$0,32 de desconto no mês subsequente.</CardPs>
 
-              <TouchableOpacity style={styles.pay}>
+              <TouchableOpacity style={styles.pay} onPress={handlePay}>
                 <Text style={styles.payText}>
                   Pagar fatura
                 </Text>
@@ -113,5 +118,3 @@ const styles = StyleSheet.create({
     color: '#FFF'
   }
 });
-
-export default withNavigation(Main);
