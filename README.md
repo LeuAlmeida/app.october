@@ -15,7 +15,10 @@ Sem muitos segredos por aqui. Seguindo as instruções do challenge, a aplicaç�
 
 ```zsh
 # Clonando o projeto
-$ git clone
+$ git clone https://github.com/LeuAlmeida/provi.challenge.git
+
+# Acessando a pasta do repositrio
+$ cd provi.challenge
 
 # Acessando a pasta da aplicação
 $ cd mobile
