@@ -43,7 +43,7 @@ export const BalanceText = styled.Text`
 export const InterestView = styled.View`
   width: 90%;
   align-self: center;
-  margin-top: 20px;
+  margin-top: 30px;
   flex-direction: row;
 `;
 
@@ -70,7 +70,7 @@ export const Card = styled.View`
   background: #fff;
   align-self: center;
   justify-content: center;
-  margin: 0 1.5%;
+  margin: 15px 1.5%;
   border-radius: 7px;
 `;
 

@@ -46,11 +46,6 @@ export default class Account extends Component {
             <BalanceText style={{textAlign: 'left', fontSize: 12, paddingLeft: 15}}>Empréstimo Total</BalanceText>
             <BalanceText style={{textAlign: 'center', fontSize: 22, fontWeight: 'bold'}}>R$ {amountTaken}</BalanceText>
           </BalanceView>
-          <View style={{alignItems: 'center'}}>
-            <Text style={{color: '#d2d2d2'}}>
-              Seu id de usuário é {UserId} 😎
-            </Text>
-          </View>
 
           <InterestView>
             <UniqueInterest>
