@@ -66,15 +66,15 @@ export default class Account extends Component {
 
           <Cards>
             <Card style={styles.defaultShadow}>
-              <CardImage source={require('../../assets/img/icons/actual.png')} />
+              <CardImage source={require('../../assets/img/icons/dollar-symbol.png')} />
               <CardDescription>Configurações</CardDescription>
             </Card>
             <Card style={styles.defaultShadow}>
-              <CardImage source="" />
+              <CardImage source={require('../../assets/img/icons/banking.png')} />
               <CardDescription>Renegociar</CardDescription>
             </Card>
             <Card style={styles.defaultShadow}>
-              <CardImage source="" />
+              <CardImage source={require('../../assets/img/icons/dart-board.png')} />
               <CardDescription>Metas</CardDescription>
             </Card>
           </Cards>
