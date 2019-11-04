@@ -6,7 +6,7 @@ import {
   ActivityIndicator,
   ImageBackground,
   FlatList,
-  AsyncStorage,
+  SafeAreaView
 } from 'react-native';
 import {
   Container,
@@ -73,8 +73,9 @@ export default class Main extends Component {
         <ImageBackground
           source={require('../../assets/img/halfBg.jpg')}
           style={{width: '100%', height: '100%'}}>
+            <SafeAreaView>
           <Perfil
-            style={{alignSelf: 'flex-start'}}
+            style={{alignSelf: 'flex-start', marginTop: 35}}
             onPress={
               () => navigate(
                 'Account', {
@@ -90,7 +91,7 @@ export default class Main extends Component {
             <PerfilImg source={perfilPic} />
             <FullName>Léu Almeida</FullName>
           </Perfil>
-          <BalanceCard style={styles.defaultShadow}>
+          <BalanceCard style={styles.cardShadow}>
             <CardTitle>
               <TitleText>Total do empréstimo</TitleText>
               <BalanceValue>R$ {this.state.allData.amountTaken},00</BalanceValue>
@@ -102,7 +103,7 @@ export default class Main extends Component {
           </BalanceCard>
 
           <QuickLine />
-
+        <View style={{marginTop: 50}}>
           <StatementSection>
             <Text style={{fontWeight: 'bold', color: '#282d33'}}>
               Faturas recentes
@@ -147,6 +148,8 @@ export default class Main extends Component {
             )}
             keyExtractor={({id}, index) => id}
           />
+          </View>
+          </SafeAreaView>
         </ImageBackground>
       </Container>
     );
@@ -164,4 +167,20 @@ const styles = StyleSheet.create({
     shadowRadius: 16.0,
     elevation: 24,
   },
+  cardShadow: {
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 12,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 16.0,
+    elevation: 24,
+    marginTop: 45,
+  },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+},
 });

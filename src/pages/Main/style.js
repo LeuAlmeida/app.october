@@ -8,14 +8,13 @@ export const Container = styled.View`
 
 export const Perfil = styled.TouchableOpacity`
   flex-direction: row;
-  margin-top: 25px;
   padding-left: 5%;
 `;
 
 export const PerfilImg = styled.Image`
   width: 50px;
   height: 50px;
-  border-radius: 30px;
+  border-radius: 20px;
   border: 3px solid #fff;
   margin-right: 10px;
   resize-mode: cover;

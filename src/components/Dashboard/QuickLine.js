@@ -6,7 +6,7 @@ import {StyleSheet, View, Text} from 'react-native';
 export default class Dashboard extends Component {
   render() {
     return (
-      <View style={styles.quickLine}>
+      <View style={styles.quickLine && {marginTop: 55, marginLeft: '5%'}}>
         <View style={styles.row}>
           <View style={styles.quickAccess}>
             <Icon
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     width: '50%',
   },
   quickAccessIcon: {
-    backgroundColor: '#efefef',
+    backgroundColor: 'transparent',
     padding: 4,
     marginRight: 5,
     borderRadius: 15,
