@@ -1,44 +1,72 @@
-## Contexto:
+<p align="center">
+<img src=".readme/signature.png" width="40%">
+</p>
 
-A provi é uma fintech que oferece crédito para pessoa física sem garantia, com o intuito de fomentar a educação especializada no Brasil. Financiamos cursos e especializações (presenciais ou online) para designers, programadores, data scientists, digital marketers, etc.
+# Challenge Provi | Aplicação para clientes
+Aplicação desenvolvida por **Léu Almeida (leunardo.dev)**
 
-### desafio provi - javascript developer
+## Requisitos
+- Node >= 10.16.3
+- Yarn >= 1.19.1
 
-Imagine que você recebeu a missão de construir um dashboard onde os usuários que receberam empréstimos podem ver suas parcelas em aberto, valor total da dívida, total de juros, etc...
 
-Olhando esse desafio pela ótica do cliente, quais funcionalidades você imagina que sejam ideais para um dashboard de gestão e acompanhamento do empréstimo?
+## Rodando o projeto
+Sem muitos segredos por aqui. Seguindo as instruções do challenge, a aplicação foi desenvolvida com o CRA. Portanto, para iniciar a aplicação basta seguir os passos abaixo.
 
-Com isso em mente, imagine que vc é um "single dev army" e tem a responsabilidade de desenvolver um MVP desse dashboard e apresentar para o resto do time.
+```zsh
+# Clonando o projeto
+$ git clone https://github.com/LeuAlmeida/provi.challenge.git
 
-### siga os passos abaixo para fazer o desafio:
+# Acessando a pasta do repositrio
+$ cd provi.challenge
 
-1. Crie um repositório no github.
-2. Use o CRA(create-react-app) para gerar a estrutura inicial do projeto.
-3. Sinta-se a vontade para fazer chamadas http como preferir.
-4. Sinta-se a vontade para usar algum framework de UI/UX ou fazer o próprio design.
-5. Ao terminar, faça um pull request do seu challenge e um fork em seguida.
-6. Caso você sinta necessidade de "chumbar" algum texto na tela que não esteja na API (nome do usuário, foto, email, mensagens, etc), não tem problema.
-7. Caso não consiga fazer o fork/pull request, encaminhar o repo zipado para luciano@provi.com.br ou padilha@provi.com.br
+# Acessando a pasta da aplicação
+$ cd mobile
 
-### O que vamos levar em conta
+# Instalando as dependências para desenvolvimento
+$ npm install
 
-1. Bons princípios de UI/UX
-2. Boa noção de design patterns.
-3. Usar Redux/Context para gerenciamento de estado.
-4. Usar Hooks.
-5. Organização do github (commits, pull requests).
+# Iniciando a aplicação no Android
+$ react-native run-android
 
-### Observações
+#Iniciando a aplicação no iOS
+$ react-native run-ios
+```
+Caso enfrente algum problema, por favor, execute (em outra janela do terminal) o comando `react-native start`. Em sequência, inicie novamente o `react-native run-android` (ou `react-native run-ios`).
 
-1. Caso tenha alguma dúvida durante o challenge, fique à vontade pra entrar em contato conosco. (Você pode nos encontrar no slack do react-brasil @padil, @lucianokrebs ou através dos nossos e-mails mencionados acima)
-2. Faça com calma e qualidade e use um tempo razoável.
 
-#### Explicação dos dados no ENDPOINT do empréstimo:
+## A navegação
+Eu desenvolvi uma aplicação com uma interface um tanto quanto completa.
+Entretanto, suas funcionalidades são restritas aos dados contidos no ENDPOINT.
 
-ENDPOINT: http://www.mocky.io/v2/5c923b0932000029056bce39
+### O que funciona?
+São três rotas funcionais. Entre elas, são: Main (início), Account (conta do cliente) e Statements (faturas do cliente).
 
-1.  totalAmountInTaxes: Valor total de juros no empréstimo
-2.  monthlyInterest: Taxa de juros mensal
-3.  amountPayd: Valor total pago
-4.  amountTaken: Valor total emprestado
-5.  installments: Todas as parcelas do empréstimo
+- Ao entrar na aplicação, você estará no Dashboard.
+- **Minha Conta:** A rota que exibirá, de modo geral, as informações do usuário é acessável através da minha foto de perfil.
+- **Faturas do Cliente:** Há um ScrollView no final da página. Clicando em um deles, será redirecionado para uma nova rota contendo as informações daquela prestação.
+
+*Observação importante: Eu inseri um operador condicional ternário em que alteraria o ícone e título (fatura em aberto) deste ScrollView conforme situação de pagamento. Mas como no endpoint só haviam situações inadimplentes, todos ficaram como abertos na aplicação)*
+
+### O que é apenas estético?
+Algumas funcionalidades são apenas por questões de estética, para entender melhor a interface.<br/>
+Como na prática eu não coloquei nenhuma distinção entre esses objetos, vou listar aqui o que não é funcional. Tudo bem?
+
+#### Dashboard
+- Botões do header, abaixo do total do empréstimo **não são funcionais**.
+- Os botões e ícones de acesso rápido, como o "Minha conta", "Indicar amigos"... **não são funcionais**.
+
+#### Minha Conta
+- Os card buttons existentes nesta página (configurações, renegociar e metas) são meramente ilustrativos e não possuem nenhuma função real.
+- O campo de "Atualmente Cursando" também. É um campo estático apenas para ilustrar.
+
+*Observação: Assim como citado anteriormente, aqui também há um operador ternário para o caso do cliente ter pago (ou não) alguma parcela do empréstimo*
+
+<hr/>
+<p align="center">
+Nos falamos em breve! :alien:
+</p>
+
+<p align="center">
+<a href="http://linkedin.com/in/leonardoalmeida99">Connect me in LinkedIn</a> | <a href="http://behance.net/almeida99">See my Behance</a> | <a href="https://leunardo.dev">Click here to go to my CV</a>
+</p>
