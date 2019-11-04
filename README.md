@@ -2,11 +2,11 @@
 <img src="readme/logo.png" width="40%">
 </p>
 
-# AppOctober | Dashboard para clientes
+# Dashboard para clientes
 Este projeto nasceu de um desafio para uma onda de desenvolvimento React, na qual decidi transformá-lo em um aplicativo de código aberto para outros desenvolvedores usarem e melhorarem a interface e o próprio código.
 
 <p align="center">
-<img src="readme/screenshots.png" width="40%">
+<img src="readme/screenshots.png" width="75%">
 </p>
 
 ## Requisitos
