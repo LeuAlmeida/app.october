@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   Container,
   Header,
@@ -16,80 +16,120 @@ import {
   StudyingView,
   ActuallyStudying,
   CourseName
-} from './style';
-import { StyleSheet, View, TouchableOpacity, Text, ImageBackground } from 'react-native';
+} from "./style";
+import {
+  StyleSheet,
+  View,
+  SafeAreaView,
+  TouchableOpacity,
+  Text,
+  ImageBackground
+} from "react-native";
 
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon from "react-native-vector-icons/MaterialIcons";
 
 export default class Account extends Component {
   render() {
     const { navigate } = this.props.navigation;
 
-    const UserId = this.props.navigation.getParam('UserId');
-    const amountTaken = this.props.navigation.getParam('amountTaken');
-    const amountPayd = this.props.navigation.getParam('amountPayd');
-    const monthlyInterest = this.props.navigation.getParam('monthlyInterest');
-    const totalAmountInTaxes = this.props.navigation.getParam('totalAmountInTaxes');
+    const UserId = this.props.navigation.getParam("UserId");
+    const amountTaken = this.props.navigation.getParam("amountTaken");
+    const amountPayd = this.props.navigation.getParam("amountPayd");
+    const monthlyInterest = this.props.navigation.getParam("monthlyInterest");
+    const totalAmountInTaxes = this.props.navigation.getParam(
+      "totalAmountInTaxes"
+    );
 
     return (
       <Container>
         <ImageBackground
-          source={require('../../assets/img/midHalfBg.jpg')}
-          style={{width: '100%', height: '100%'}}>
+          source={require("../../assets/img/midHalfBg.jpg")}
+          style={{ width: "100%", height: "100%" }}
+        >
+          <SafeAreaView>
             <Header>
-              <TouchableOpacity onPress={() => navigate('Main')}>
-              <Icon name="keyboard-arrow-left" size={30} color="#fff" />
+              <TouchableOpacity onPress={() => navigate("Main")}>
+                <Icon name="keyboard-arrow-left" size={30} color="#fff" />
               </TouchableOpacity>
               <HeaderText>Minha Conta</HeaderText>
-          </Header>
-          <BalanceView>
-            <BalanceText style={{textAlign: 'left', fontSize: 12, paddingLeft: 15}}>Empréstimo Total</BalanceText>
-            <BalanceText style={{textAlign: 'center', fontSize: 22, fontWeight: 'bold'}}>R$ {amountTaken}</BalanceText>
-          </BalanceView>
-
-          <InterestView>
-            <UniqueInterest>
-              <InterestText>Taxa de Juros</InterestText>
-              <InterestText style={{fontSize: 24, fontWeight: 'bold'}}>{monthlyInterest}% <Text style={{fontSize: 14}}>/ mês</Text></InterestText>
-            </UniqueInterest>
-
-            <UniqueInterest>
-              <InterestText>Valor Pago</InterestText>
-              <InterestText style={{fontSize: 24, fontWeight: 'bold', amountPayd}}><Text style={amountPayd > 0 ? {color: '#a9f895'} : {color: '#f895cc'}}>R$ {amountPayd}</Text></InterestText>
-            </UniqueInterest>
-          </InterestView>
-
-          <Cards>
-            <Card style={styles.defaultShadow}>
-              <CardImage source={require('../../assets/img/icons/dollar-symbol.png')} />
-              <CardDescription>Configurações</CardDescription>
-            </Card>
-            <Card style={styles.defaultShadow}>
-              <CardImage source={require('../../assets/img/icons/banking.png')} />
-              <CardDescription>Renegociar</CardDescription>
-            </Card>
-            <Card style={styles.defaultShadow}>
-              <CardImage source={require('../../assets/img/icons/dart-board.png')} />
-              <CardDescription>Metas</CardDescription>
-            </Card>
-          </Cards>
-
-          <StudyingView>
-            <View>
-              <ActuallyStudying>Atualmente Cursando</ActuallyStudying>
-              <StudyingImage
-                source={require('../../assets/img/studying/gostack.png')}
+            </Header>
+            <BalanceView>
+              <BalanceText
+                style={{ textAlign: "left", fontSize: 12, paddingLeft: 15 }}
+              >
+                Empréstimo Total
+              </BalanceText>
+              <BalanceText
                 style={{
-                  resizeMode: 'cover',
+                  textAlign: "center",
+                  fontSize: 22,
+                  fontWeight: "bold"
                 }}
-              />
-              <CourseName>
-                Rocketseat | GoStack 9
-              </CourseName>
-            </View>
-          </StudyingView>
+              >
+                R$ {amountTaken}
+              </BalanceText>
+            </BalanceView>
 
+            <InterestView>
+              <UniqueInterest>
+                <InterestText>Taxa de Juros</InterestText>
+                <InterestText style={{ fontSize: 24, fontWeight: "bold" }}>
+                  {monthlyInterest}% <Text style={{ fontSize: 14 }}>/ mês</Text>
+                </InterestText>
+              </UniqueInterest>
 
+              <UniqueInterest>
+                <InterestText>Valor Pago</InterestText>
+                <InterestText
+                  style={{ fontSize: 24, fontWeight: "bold", amountPayd }}
+                >
+                  <Text
+                    style={
+                      amountPayd > 0
+                        ? { color: "#a9f895" }
+                        : { color: "#f895cc" }
+                    }
+                  >
+                    R$ {amountPayd}
+                  </Text>
+                </InterestText>
+              </UniqueInterest>
+            </InterestView>
+
+            <Cards style={{marginTop: 75}}>
+              <Card style={styles.defaultShadow}>
+                <CardImage
+                  source={require("../../assets/img/icons/dollar-symbol.png")}
+                />
+                <CardDescription>Configurações</CardDescription>
+              </Card>
+              <Card style={styles.defaultShadow}>
+                <CardImage
+                  source={require("../../assets/img/icons/banking.png")}
+                />
+                <CardDescription>Renegociar</CardDescription>
+              </Card>
+              <Card style={styles.defaultShadow}>
+                <CardImage
+                  source={require("../../assets/img/icons/dart-board.png")}
+                />
+                <CardDescription>Metas</CardDescription>
+              </Card>
+            </Cards>
+
+            <StudyingView style={{marginTop: 40}}>
+              <View>
+                <ActuallyStudying>Atualmente Cursando</ActuallyStudying>
+                <StudyingImage
+                  source={require("../../assets/img/studying/gostack.png")}
+                  style={{
+                    resizeMode: "cover"
+                  }}
+                />
+                <CourseName>Rocketseat | GoStack 9</CourseName>
+              </View>
+            </StudyingView>
+          </SafeAreaView>
         </ImageBackground>
       </Container>
     );
@@ -98,13 +138,13 @@ export default class Account extends Component {
 
 const styles = StyleSheet.create({
   defaultShadow: {
-    shadowColor: '#000',
+    shadowColor: "#000",
     shadowOffset: {
       width: 0,
-      height: 12,
+      height: 12
     },
     shadowOpacity: 0.3,
     shadowRadius: 16.0,
-    elevation: 24,
-  },
+    elevation: 24
+  }
 });
