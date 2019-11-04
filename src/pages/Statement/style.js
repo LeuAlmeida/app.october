@@ -13,6 +13,7 @@ export const CardContent = styled.View`
   background: #fff;
   margin-top: 20px;
   height: 90%;
+  max-height: 500px;
   align-items: center;
   border-radius: 8px;
   padding-top: 20px;
