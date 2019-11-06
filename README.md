@@ -2,7 +2,7 @@
 <img src="readme/logo.png" width="40%">
 </p>
 
-# Dashboard for clients
+<h1 align="center">Dashboard for clients</h1>
 This project was born from a challenge for a React development wave, where I decided to turn it into an open source application for other developers to use and improve both the interface and the code itself.
 
 <p align="center">
