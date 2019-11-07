@@ -1,5 +1,5 @@
 <p align="center">
-<img src="readme/logo.png" width="40%">
+<img src="readme/logo.png" width="30%">
 </p>
 
 <h1 align="center">Dashboard for clients</h1>
